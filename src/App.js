@@ -6,8 +6,14 @@ class App extends Component {
   render() {
     
     return (
-      <div >
-       
+      <div>
+       Picture:
+       <input />
+
+       Name:
+       <input />
+
+      <button>Add friend</button>
       </div>
     );
   }
