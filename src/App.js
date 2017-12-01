@@ -6,7 +6,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      friend: [],
+      friends: [],
       picture: '',
       name: ''
     }
@@ -22,6 +22,16 @@ class App extends Component {
       name: value
     })
   }
+  addFriend(){
+    this.setState({
+      name: '',
+      picture:'',
+      friends: [...this.state.friends,{
+        picture: this.state.picture,
+        name: this.state.name
+      }]
+    })
+  }
   render() {
     
     return (
@@ -32,7 +42,7 @@ class App extends Component {
        Name:
        <input onChange={event => this.updateName(event.target.value)} value={this.state.name}/>
 
-      <button>Add friend</button>
+      <button onClick={() => this.addFriend()}>Add friend</button>
 
       <div>
       State: {JSON.stringify(this.state)}
