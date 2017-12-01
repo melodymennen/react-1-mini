@@ -44,9 +44,14 @@ class App extends Component {
 
       <button onClick={() => this.addFriend()}>Add friend</button>
 
-      <div>
-      State: {JSON.stringify(this.state)}
-      </div>
+     <div>
+       {this.state.friends.map(friend =>(
+         <div>
+           <img src = {friend.picture} width = '100px'/>
+           Name: {friend.name}
+         </div>
+       ))}
+     </div>
 
       </div>
     );
